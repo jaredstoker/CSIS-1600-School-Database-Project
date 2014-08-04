@@ -69,7 +69,7 @@ void displayStudentStructure()
 
     int testvar = sizeof(sdb)/sizeof(sdb[0]);
 
-    sdatabaseInFile.open("/Volumes/Banksy/Users/kirbatron/HDD-Documents/QT Projects/Group_Project/students.txt"); // open students.txt
+    sdatabaseInFile.open("students.txt"); // open students.txt
 
     if(sdatabaseInFile.fail())
     {
@@ -123,7 +123,7 @@ void displayStudentStructure()
 void classes_load()
 {
 
-    ifstream classesInFile("/Volumes/Banksy/Users/kirbatron/HDD-Documents/QT Projects/Group_Project/classes.txt");
+    ifstream classesInFile("classes.txt");
 
     if(!classesInFile)
     {
@@ -149,7 +149,7 @@ void sdatabase_load()
 
     ifstream sdatabaseInFile;
 
-    sdatabaseInFile.open("/Volumes/Banksy/Users/kirbatron/HDD-Documents/QT Projects/Group_Project/students.txt"); // open students.txt
+    sdatabaseInFile.open("students.txt"); // open students.txt
 
     if(sdatabaseInFile.fail())
     {
@@ -642,6 +642,7 @@ void addRemoveStudent()
             {
 
                 cout << endl << "A student matching this name has been found." << endl << endl;
+                adminMenu();
             }
         }
     }
