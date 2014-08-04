@@ -1,3 +1,9 @@
+//Jared Stoker
+//Kirby Wood
+//Sachith Abayakoon
+//Chanh Lam
+
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -182,7 +188,7 @@ void sdatabase_load()
 }
 void sdatabase_save()
 {
-    ofstream sdatabaseOutFile("/Volumes/Banksy/Users/kirbatron/HDD-Documents/QT Projects/Group_Project/students.txt");
+    ofstream sdatabaseOutFile("students.txt");
 
     if(!sdatabaseOutFile)
     {
@@ -217,7 +223,7 @@ void tdatabase_load()
 
     ifstream tdatabaseInFile;
 
-    tdatabaseInFile.open("/Volumes/Banksy/Users/kirbatron/HDD-Documents/QT Projects/Group_Project/teachers.txt");
+    tdatabaseInFile.open("teachers.txt");
 
 
     if(!tdatabaseInFile)
@@ -245,7 +251,7 @@ void tdatabase_load()
 }
 void tdatabase_save()
 {
-    ofstream tdatabaseOutFile("/Volumes/Banksy/Users/kirbatron/HDD-Documents/QT Projects/Group_Project/teachers.txt");
+    ofstream tdatabaseOutFile("teachers.txt");
     if(!tdatabaseOutFile)
     {
         cout<<"Cannot save file"<<endl;
@@ -1019,18 +1025,25 @@ void viewGrades()
     //Load Student database
     sdatabase_load();
 
+
+
+
     int i=0;
     while (i <sizeof(sdb)/sizeof(sdb[0]))
     {
+        int val1 = sdb[i].class1;
+        int val2 = sdb[i].class2;
+        int val3 = sdb[i].class3;
+        int val4 = sdb[i].class4;
         if (sdb[i].fname == fname)
         {
             if (sdb[i].lname == lname)
             {
                 cout << endl << "Your grades are: " << endl
-                     << sdb[i].grade1 << " " << endl
-                     << sdb[i].grade2 << " " << endl
-                     << sdb[i].grade3 << " " << endl
-                     << sdb[i].grade4 << endl << endl;
+                     << sdb[i].grade1 << " \t"<< cdb[val1-1].courses<< endl
+                     << sdb[i].grade2 << " \t"<< cdb[val2-1].courses  << endl
+                     << sdb[i].grade3 << " \t"<< cdb[val3-1].courses << endl
+                     << sdb[i].grade4 <<" \t"<< cdb[val4-1].courses << endl << endl;
             }
         }
         i++;
