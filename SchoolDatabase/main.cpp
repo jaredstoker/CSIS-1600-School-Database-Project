@@ -34,7 +34,7 @@ struct Teachers{
     int class1, class2, class3, class4;
 }tdb[10];
 struct Courses{
-    string courses;
+    string course;
 }cdb[10];
 
 
@@ -63,7 +63,7 @@ void classes_load()
         for(int i = 0; i < sizeof(cdb)/sizeof(cdb[0]); i++)
         {
             classesInFile>>
-            cdb[i].courses;
+            cdb[i].course;
 
         }
         cout <<"All classes have been successfully loaded"<<endl;
@@ -72,7 +72,7 @@ void classes_load()
     }
 }
 
-void sdatabase_load()
+void sdb_load()
 {
 
     ifstream sdatabaseInFile("students.txt");
@@ -107,7 +107,7 @@ void sdatabase_load()
         sdatabaseInFile.close();
     }
 }
-void sdatabase_save()
+void sdb_save()
 {
     ofstream sdatabaseOutFile("students.txt");
     if(!sdatabaseOutFile)
@@ -138,7 +138,7 @@ void sdatabase_save()
         sdatabaseOutFile.close();
     }
 }
-void tdatabase_load()
+void tdb_load()
 {
 
     ifstream tdatabaseInFile("teachers.txt");
@@ -167,7 +167,7 @@ void tdatabase_load()
         tdatabaseInFile.close();
     }
 }
-void tdatabase_save()
+void tdb_save()
 {
     ofstream tdatabaseOutFile("teachers.txt");
     if(!tdatabaseOutFile)
@@ -508,8 +508,8 @@ int main()
 {
     getdbSize();
 
-    sdatabase_load();
-    tdatabase_load();
+    sdb_load();
+    tdb_load();
     classes_load();
     //Test print the database after initialization
     /*for(int j = 0; j < 5; j++)
