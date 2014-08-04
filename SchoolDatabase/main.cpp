@@ -642,7 +642,7 @@ void addRemoveStudent()
             {
 
                 cout << endl << "A student matching this name has been found." << endl << endl;
-                adminMenu();
+
             }
         }
     }
@@ -1026,10 +1026,10 @@ void viewGrades()
         {
             if (sdb[i].lname == lname)
             {
-                cout << endl << "Your grades are: "
-                     << sdb[i].grade1 << " "
-                     << sdb[i].grade2 << " "
-                     << sdb[i].grade3 << " "
+                cout << endl << "Your grades are: " << endl
+                     << sdb[i].grade1 << " " << endl
+                     << sdb[i].grade2 << " " << endl
+                     << sdb[i].grade3 << " " << endl
                      << sdb[i].grade4 << endl << endl;
             }
         }
